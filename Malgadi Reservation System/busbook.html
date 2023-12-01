@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    header {
+            background-color: #b32400;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #7db300;
+            color: white;
+            text-align: center;
+            padding: 10px;}
+    header img {
+      width: 300px;
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <img src="beach.png" alt="Image 1">
+        <img src="beach_vacation.jpg" alt="Image 2">
+        <img src="Escape.png" alt="Image 3">
+        <!-- Add more images as needed -->
+      </header>
+    
+      <nav>
+        <input type=button onClick="parent.location='MR1.html'"value='Home'>
+    </nav>
+  <form id="bookingForm" action="#" method="post">
+    <label for="departureDate">Departure Date:</label>
+    <input type="date" id="departureDate" name="departureDate" required>
+
+    <label for="departureTime">Departure Time:</label>
+    <input type="time" id="departureTime" name="departureTime" required>
+
+    <label for="roundTrip">Round Trip:</label>
+    <select id="roundTrip" name="roundTrip">
+      <option value="oneWay">One Way</option>
+      <option value="roundTrip">Round Trip</option>
+    </select>
+
+    <div id="returnDateContainer" style="display: none;">
+      <label for="returnDate">Return Date:</label>
+      <input type="date" id="returnDate" name="returnDate">
+    </div>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      // You can add logic here to handle the form data
+      // For demonstration purposes, let's just open Air India's website
+      window.open('https://www.gsrtc.in/site/', '_blank');
+    }
+
+    document.getElementById('roundTrip').addEventListener('change', function () {
+      var returnDateContainer = document.getElementById('returnDateContainer');
+      returnDateContainer.style.display = this.value === 'roundTrip' ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>
